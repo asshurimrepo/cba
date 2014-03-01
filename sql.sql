@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.34 - MySQL Community Server (GPL)
+-- Server version:               5.5.36 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL Version:             8.3.0.4694
 -- --------------------------------------------------------
@@ -78,11 +78,13 @@ CREATE TABLE IF NOT EXISTS `curriculum_subject` (
   KEY `FK_curriculum_subject_subjects` (`subject_id`),
   CONSTRAINT `FK_curriculum_subject_curriculums` FOREIGN KEY (`curriculum_id`) REFERENCES `curriculums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_curriculum_subject_subjects` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table cba_db.curriculum_subject: ~0 rows (approximately)
+-- Dumping data for table cba_db.curriculum_subject: ~1 rows (approximately)
 DELETE FROM `curriculum_subject`;
 /*!40000 ALTER TABLE `curriculum_subject` DISABLE KEYS */;
+INSERT INTO `curriculum_subject` (`id`, `curriculum_id`, `subject_id`, `year_lvl`, `semester`, `created_at`, `updated_at`) VALUES
+	(1, 4, 1, '1', 'First', '2014-03-02 16:51:19', '2014-03-02 16:51:28');
 /*!40000 ALTER TABLE `curriculum_subject` ENABLE KEYS */;
 
 
@@ -151,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table cba_db.pages: ~9 rows (approximately)
 DELETE FROM `pages`;
@@ -165,7 +167,8 @@ INSERT INTO `pages` (`id`, `name`, `route`, `icon`, `order`, `only_admin`, `crea
 	(12, 'Submit Grades', 'submit-grades', 'fa-icon-retweet', 1, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 	(13, 'Home', '/', 'fa-icon-home', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 	(14, 'Users', 'users', 'fa-icon-user', 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(15, 'About Us', 'about-us', 'fa-icon-info-sign', 10, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+	(15, 'About Us', 'about-us', 'fa-icon-info-sign', 10, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(16, 'Evaluate', 'evaluate', 'fa-icon-reorder', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 
 
@@ -178,14 +181,12 @@ CREATE TABLE IF NOT EXISTS `prerequisites` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table cba_db.prerequisites: ~10 rows (approximately)
+-- Dumping data for table cba_db.prerequisites: ~12 rows (approximately)
 DELETE FROM `prerequisites`;
 /*!40000 ALTER TABLE `prerequisites` DISABLE KEYS */;
 INSERT INTO `prerequisites` (`id`, `subject_id`, `curr_subj_id`, `created_at`, `updated_at`) VALUES
-	(1, 1, 1, '2014-02-25 22:07:36', '2014-02-25 22:07:36'),
-	(2, 4, 1, '2014-02-25 22:07:36', '2014-02-25 22:07:36'),
 	(13, 3, 5, '2014-02-25 23:03:19', '2014-02-25 23:03:19'),
 	(14, 3, 3, '2014-02-25 23:04:10', '2014-02-25 23:04:10'),
 	(15, 4, 3, '2014-02-25 23:04:10', '2014-02-25 23:04:10'),
@@ -193,7 +194,11 @@ INSERT INTO `prerequisites` (`id`, `subject_id`, `curr_subj_id`, `created_at`, `
 	(17, 3, 4, '2014-02-25 23:10:44', '2014-02-25 23:10:44'),
 	(18, 4, 4, '2014-02-25 23:10:44', '2014-02-25 23:10:44'),
 	(19, 10, 7, '2014-02-25 23:19:17', '2014-02-25 23:19:17'),
-	(20, 3, 15, '2014-02-26 06:45:37', '2014-02-26 06:45:37');
+	(20, 3, 15, '2014-02-26 06:45:37', '2014-02-26 06:45:37'),
+	(24, 1, 1, '2014-03-02 16:51:28', '2014-03-02 16:51:28'),
+	(25, 4, 1, '2014-03-02 16:51:28', '2014-03-02 16:51:28'),
+	(26, 5, 1, '2014-03-02 16:51:28', '2014-03-02 16:51:28'),
+	(27, 10, 1, '2014-03-02 16:51:28', '2014-03-02 16:51:28');
 /*!40000 ALTER TABLE `prerequisites` ENABLE KEYS */;
 
 

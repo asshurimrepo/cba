@@ -12,8 +12,9 @@
 				<th>Grade</th>
 			<?php endif; ?>
 			
-
-			<th>Pre-Requisite(s)</th>
+			<?php if(!$eval): ?>
+				<th>Pre-Requisite(s)</th>
+			<?php endif; ?>
 
 		</thead>
 
@@ -35,7 +36,9 @@
 						<td><?php echo $e ? $e->grade : ''; ?></td>
 					<?php endif; ?>
 
+					<?php if(!$eval): ?>
 					<td><?php echo implode(', ', $s->list_preq()); ?></td>
+					<?php endif; ?>
 
 				</tr>
 

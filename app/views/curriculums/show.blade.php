@@ -8,7 +8,6 @@
 					<div class="box-header" data-original-title="">
 						<h2><i class="fa-icon-list-alt"></i><span class="break"></span>{{ link_to_route('courses.curriculums.index',  'Curriculum', $course_id) }} >  Subjects </h2>
 						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon plus"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
 						</div>
 					</div>

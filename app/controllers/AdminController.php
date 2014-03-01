@@ -47,4 +47,11 @@ class AdminController extends BaseController {
 	}
 
 
+	public function getEvaluate()
+	{
+		Session::put('active', 'evaluate');
+		$students = Student::with('course', 'curriculum')->get();
+        return View::make('main.evaluate', compact('students'));
+	}
+
 }

@@ -12,8 +12,9 @@
 				<th>Grade</th>
 			@endif
 			
-
-			<th>Pre-Requisite(s)</th>
+			@if(!$eval)
+				<th>Pre-Requisite(s)</th>
+			@endif
 
 		</thead>
 
@@ -35,7 +36,9 @@
 						<td>{{ $e ? $e->grade : ''  }}</td>
 					@endif
 
+					@if(!$eval)
 					<td>{{ implode(', ', $s->list_preq()) }}</td>
+					@endif
 
 				</tr>
 

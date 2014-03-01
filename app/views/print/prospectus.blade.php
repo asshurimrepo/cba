@@ -35,8 +35,7 @@
 
 	@include('print.table', ['t_title'=>'FOURTH YEAR, FIRST SEMESTER', 'lvl'=>4, 'sem'=>'First'])
 	@include('print.table', ['t_title'=>'FOURTH YEAR, SECOND SEMESTER', 'lvl'=>4, 'sem'=>'Second'])
-
-
+	
 
 </div>
 @stop
