@@ -1,0 +1,53 @@
+<div class="modal hide fade" id="myModal">
+
+<?php echo Form::open(['route'=>'subjects.store', 'style'=>'margin:0', 'class'=>'form-horizontal']); ?>
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Add New Subject</h3>
+	</div>
+	<div class="modal-body">
+		
+
+		<fieldset>
+
+
+			 <?php /* Code*/ ?>
+			  <div class="control-group">
+				<?php echo Form::label('sub_code', 'Subject Code', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('sub_code', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			 <?php /* Description*/ ?>
+			  <div class="control-group">
+				<?php echo Form::label('description', 'Description', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('description', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			  <?php /* Description*/ ?>
+			  <div class="control-group">
+				<?php echo Form::label('units', 'Units', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('units', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			  
+
+		</fieldset>	
+
+
+
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<button  class="btn btn-primary">Submit</button>
+	</div>
+
+<?php echo Form::close(); ?>
+
+</div>

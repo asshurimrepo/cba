@@ -1,0 +1,59 @@
+
+<?php $__env->startSection('c'); ?>
+
+	<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header" data-original-title="">
+						<h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Curriculum </h2>
+						<div class="box-icon">
+							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						
+						<?php echo Form::model($subject, ['route'=>['subjects.update', $id], 'style'=>'margin:0', 'class'=>'form-horizontal', 'method'=>'put']); ?>
+
+							<fieldset>
+
+							<?php /* Code*/ ?>
+							  <div class="control-group">
+								<?php echo Form::label('sub_code', 'Subject Code', ['class'=>'control-label']); ?>
+								<div class="controls">
+								  <?php echo Form::text('sub_code', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+								</div>
+							  </div>
+
+							 <?php /* Description*/ ?>
+							  <div class="control-group">
+								<?php echo Form::label('description', 'Description', ['class'=>'control-label']); ?>
+								<div class="controls">
+								  <?php echo Form::text('description', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+								</div>
+							  </div>
+
+							  <?php /* Description*/ ?>
+							  <div class="control-group">
+								<?php echo Form::label('units', 'Units', ['class'=>'control-label']); ?>
+								<div class="controls">
+								  <?php echo Form::text('units', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+								</div>
+							  </div>
+
+							  <div class="form-actions">
+
+								<button type="submit" class="btn btn-primary">Save changes</button>
+							 	<a href="<?php echo route('subjects.index'); ?>" class="btn btn-danger">Cancel</a>
+
+							  </div>
+
+							</fieldset>	
+
+					<?php echo Form::close(); ?>
+
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+	
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('acme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

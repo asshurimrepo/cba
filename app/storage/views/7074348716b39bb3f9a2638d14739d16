@@ -1,0 +1,36 @@
+<?php echo $t_title; ?>
+
+	<table class="table table-striped table-bordered">
+		
+		<thead>
+			
+			<th>Subject Code</th>
+			<th>Descriptive Title</th>
+			<th>Units</th>
+			<th>Grade</th>
+			<th>Pre-Requisite(s)</th>
+
+		</thead>
+
+		<tbody>
+			
+			<?php foreach (CurrSubj::with('subject', 'pre_requisites')->where('curriculum_id', $student->curriculum_id)->where('year_lvl', $lvl)->where('semester', $sem)->get() as $s): ?>
+
+				<?php $e = Enrollment::where('curriculum_subject_id', $s->id)->where('student_id',$student->id)->first(); ?>
+				
+				<tr>
+					
+					<td><?php echo $s->subject->sub_code; ?></td>
+					<td><?php echo $s->subject->description; ?></td>
+					<td><?php echo $s->subject->units; ?></td>
+					<td><?php echo $e ? $e->grade : ''; ?></td>
+					<td><?php echo implode(', ', $s->list_preq()); ?></td>
+
+				</tr>
+
+
+			<?php endforeach; ?>
+
+		</tbody>
+
+	</table>

@@ -1,0 +1,56 @@
+
+<?php $__env->startSection('c'); ?>
+
+	<h1 ><center>Welcome, <?php echo Auth::user()->fullname(); ?></center></h1>
+
+	<br>
+
+	<div class="box-content">
+						
+						<a class="quick-button span2" href="<?php echo url('users'); ?>">
+							<i class="fa-icon-group"></i>
+							<p>Users</p>
+							<span class="notification red"><?php echo User::isAdmin()->count(); ?></span>
+						</a>
+						<a class="quick-button span2" href="<?php echo url('students'); ?>">
+							<i class="fa-icon-group"></i>
+							<p>Students</p>
+							<span class="notification red"><?php echo Student::count(); ?></span>
+						</a>
+						<a class="quick-button span2" href="<?php echo url('teachers'); ?>"> 
+							<i class="fa-icon-group"></i>
+							<p>Teachers</p>
+							<span class="notification red"><?php echo Teacher::count(); ?></span>
+						</a>
+						<a class="quick-button span2" href="<?php echo url('subjects'); ?>">
+							<i class="fa-icon-reorder"></i>
+							<p>Subjects</p>
+							<span class="notification red"><?php echo Subject::count(); ?></span>
+						</a>
+						<a class="quick-button span2" href="<?php echo url('courses'); ?>">
+							<i class="fa-icon-reorder"></i>
+							<p>Courses</p>
+							<span class="notification red"><?php echo Course::count(); ?></span>
+						</a>
+						<a class="quick-button span2" href="<?php echo url('about-us'); ?>">
+							<i class=" fa-icon-info-sign"></i>
+							<p>About Us</p>
+						</a>
+						<div class="clearfix"></div>
+					</div>
+
+	<center>
+	<br>
+
+		<h1><b>Vision</b></h1>
+		<p><?php echo Setting::find(1)->vision; ?></p>
+
+		<h1> <b>Mission</b> </h1>
+		<p><?php echo Setting::find(1)->mission; ?></p>
+
+	</center>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('acme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

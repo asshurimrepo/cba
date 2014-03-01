@@ -1,0 +1,54 @@
+<div class="modal hide fade" id="myModal">
+
+<?php echo Form::open(['route'=>'enrollments.store', 'style'=>'margin:0', 'class'=>'form-horizontal']); ?>
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Add New Subject</h3>
+	</div>
+	<div class="modal-body">
+		
+
+		<fieldset>
+
+			<?php echo Form::hidden('student_id', $student->id); ?>
+			
+
+			  <div class="control-group">
+				<?php echo Form::label('curriculum_subject_id', 'Subject', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::select('curriculum_subject_id', Curriculum::list_subjects($student->curriculum_id), null, ['required'=>'', 'data-placeholder'=>'Select Subject by Curriculum', 'data-rel'=>'chosen']); ?>
+				  
+				</div>
+			  </div>
+		
+			 <?php /* 
+				 <div class="control-group">
+				<?php echo Form::label('teacher_id', 'Teacher Assigned', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::select('teacher_id', Teacher::lists('fname','id'), null, ['required'=>'', 'data-placeholder'=>'Select Teacher', 'data-rel'=>'chosen']); ?>
+				  
+				</div>
+			  </div> */ ?>
+		
+			
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			  
+
+		</fieldset>	
+
+
+
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<button  class="btn btn-primary">Submit</button>
+	</div>
+
+<?php echo Form::close(); ?>
+
+</div>

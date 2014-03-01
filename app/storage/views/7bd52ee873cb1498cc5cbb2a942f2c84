@@ -1,0 +1,84 @@
+
+<div class="box span5">
+	<div class="box-header" data-original-title="">
+		<h2><i class="fa-icon-plus"></i><span class="break"></span> Add New Teacher </h2>
+		<div class="box-icon">
+			<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+		</div>
+	</div>
+	<div class="box-content">
+		
+
+<?php echo Form::open(['route'=>'teachers.store', 'style'=>'margin:0', 'class'=>'form-horizontal']); ?>
+
+	
+	<fieldset>
+
+			<?php /* Username */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('username', 'Username', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('username', null, ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+			  <?php /* Password */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('password', 'Password', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::password('password',  ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+
+				<?php /* Fname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('fname', 'First Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('fname', null, ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+			
+			  <?php /* Mname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('mname', 'Middle Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('mname', null, ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+			   <?php /* Lname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('lname', 'Last Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('lname', null, ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+			  <?php /* Gender */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('gender', 'Gender', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::select('gender', [1=>'Male', 2=>'Female'], null, ['required'=>true, 'class'=>'']); ?>
+				</div>
+			  </div>
+
+			  
+
+			  <div class="control-group">
+				<div class="controls">
+				<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			  </div>
+			  
+
+
+		</fieldset>
+	
+
+<?php echo Form::close(); ?>
+
+
+	</div>
+</div>

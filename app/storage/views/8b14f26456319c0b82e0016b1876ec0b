@@ -1,0 +1,80 @@
+<div class="modal hide fade" id="myModal">
+
+<?php echo Form::open(['route'=>'teachers.store', 'style'=>'margin:0', 'class'=>'form-horizontal']); ?>
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Add New Teacher</h3>
+	</div>
+	<div class="modal-body">
+		
+
+		<fieldset>
+
+			<?php /* Username */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('username', 'Username', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('username', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			  <?php /* Password */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('password', 'Password', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::password('password',  ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+
+				<?php /* Fname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('fname', 'First Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('fname', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			
+			  <?php /* Mname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('mname', 'Middle Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('mname', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			   <?php /* Lname */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('lname', 'Last Name', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::text('lname', null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			  <?php /* Gender */ ?>
+			  <div class="control-group">
+				<?php echo Form::label('gender', 'Gender', ['class'=>'control-label']); ?>
+				<div class="controls">
+				  <?php echo Form::select('gender', [1=>'Male', 2=>'Female'], null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				</div>
+			  </div>
+
+			  
+			
+			  
+
+		</fieldset>	
+
+
+
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<button  class="btn btn-primary">Submit</button>
+	</div>
+
+<?php echo Form::close(); ?>
+
+</div>
