@@ -40,7 +40,7 @@
 									</a>
 
 
-									<a class="btn btn-info" href="{{ route('courses.curriculums.show', [$course->id, $c->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Prospectus View">
+									<a class="btn btn-info" href="{{ url('print/view-prospectus/'.$c->id) }}" target="_blank" data-rel="tooltip" data-placement="top" data-original-title="Prospectus View">
 										<i class="halflings-icon list"></i>  
 									</a>
 

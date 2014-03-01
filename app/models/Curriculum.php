@@ -10,6 +10,11 @@ class Curriculum extends Eloquent {
 		return $this->hasMany('CurrSubj');
 	}
 
+	public function course()
+	{
+		return $this->belongsTo('Course');
+	}
+
 
 
 	public static function list_subjects($course_id, $not_in = [])

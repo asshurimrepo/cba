@@ -11,8 +11,8 @@
 
 		<h2>COLLEGE OF BUSINESS ADMINSTRATION</h2>
 
-		<h1><?php echo $student->course->name; ?></h1>
-		<p><i><?php echo $student->curriculum->description; ?></i></p>
+		<h1><?php echo $course_name; ?></h1>
+		<p><i><?php echo $c->description; ?></i></p>
 
 
 
@@ -20,8 +20,9 @@
 
 	<hr>
 
-
+<?php if(isset($student)): ?>
 	<p> <b>Name:</b> <u><?php echo $student->fullname(); ?></u> </p>
+<?php endif; ?>
 
 	<?php echo $__env->make('print.table', ['t_title'=>'FIRST YEAR, FIRST SEMESTER', 'lvl'=>1, 'sem'=>'First'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<?php echo $__env->make('print.table', ['t_title'=>'FIRST YEAR, SECOND SEMESTER', 'lvl'=>1, 'sem'=>'Second'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -12,8 +12,8 @@
 
 		<h2>COLLEGE OF BUSINESS ADMINSTRATION</h2>
 
-		<h1>{{ $student->course->name }}</h1>
-		<p><i>{{ $student->curriculum->description }}</i></p>
+		<h1>{{ $course_name }}</h1>
+		<p><i>{{ $c->description }}</i></p>
 
 
 
@@ -21,8 +21,9 @@
 
 	<hr>
 
-
+@if(isset($student))
 	<p> <b>Name:</b> <u>{{ $student->fullname() }}</u> </p>
+@endif
 
 	@include('print.table', ['t_title'=>'FIRST YEAR, FIRST SEMESTER', 'lvl'=>1, 'sem'=>'First'])
 	@include('print.table', ['t_title'=>'FIRST YEAR, SECOND SEMESTER', 'lvl'=>1, 'sem'=>'Second'])
