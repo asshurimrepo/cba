@@ -31,12 +31,17 @@
 								
 								<td class="center span3">
 
-									<a class="btn btn-info" href="{{ route('courses.curriculums.show', [$course->id, $c->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Manage Subjects">
+									<a class="btn btn-info" href="{{ route('courses.curriculums.show', [$course->id, $c->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Subjects">
 										<i class="halflings-icon list-alt"></i>  
 									</a>
 
 									<a class="btn btn-info" href="{{ route('courses.curriculums.edit', [$course->id, $c->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Edit Curriculum">
 										<i class="halflings-icon edit"></i>  
+									</a>
+
+
+									<a class="btn btn-info" href="{{ route('courses.curriculums.show', [$course->id, $c->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Prospectus View">
+										<i class="halflings-icon list"></i>  
 									</a>
 
 									{{-- <button class="btn btn-danger delete_btn" href="#ash" data-rel="tooltip" data-placement="top" data-original-title="Remove Data">
