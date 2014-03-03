@@ -54,7 +54,7 @@
 			  <div class="control-group">
 				{{ Form::label('gender', 'Gender', ['class'=>'control-label']) }}
 				<div class="controls">
-				  {{ Form::select('gender', [1=>'Male', 2=>'Female'], null, ['required'=>true, 'class'=>'input-xlarge']) }}
+				  {{ Form::select('gender', ['Male'=>'Male', 'Female'=>'Female'], null, ['required'=>true, 'class'=>'input-xlarge']) }}
 				</div>
 			  </div>
 

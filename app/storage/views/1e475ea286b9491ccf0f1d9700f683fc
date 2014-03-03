@@ -53,7 +53,7 @@
 			  <div class="control-group">
 				<?php echo Form::label('gender', 'Gender', ['class'=>'control-label']); ?>
 				<div class="controls">
-				  <?php echo Form::select('gender', [1=>'Male', 2=>'Female'], null, ['required'=>true, 'class'=>'input-xlarge']); ?>
+				  <?php echo Form::select('gender', ['Male'=>'Male', 'Female'=>'Female'], null, ['required'=>true, 'class'=>'input-xlarge']); ?>
 				</div>
 			  </div>
 

@@ -4,11 +4,10 @@
 @section('c')
 
 	<div class="row-fluid sortable">	
-				<div class="box span12">
+				<div class="box span7">
 					<div class="box-header" data-original-title="">
 						<h2><i class="fa-icon-list-alt"></i><span class="break"></span>{{ link_to_route('courses.index', $course->name) }} > Curriculums </h2>
 						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon plus"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
 						</div>
 					</div>
@@ -16,7 +15,6 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>ID</th>
 								  <th>SY</th>
 								  <th>Description</th>
 								  <th>Actions</th>
@@ -25,7 +23,6 @@
 						  <tbody>
 						  	@foreach($curriculums as $c)
 						  	<tr>
-								<td class="center">{{ $c->id }} </td>
 								<td class="center">{{ $c->sy }} </td>
 								<td class="center">{{ $c->description }} </td>
 								
@@ -58,6 +55,9 @@
 					  </table>            
 					</div>
 				</div><!--/span-->
+
+				@include('curriculums.create')
+
 			
 			</div>
 
@@ -65,6 +65,5 @@
 
 @section('modals')
 
-	@include('curriculums.create')
 	
 @stop

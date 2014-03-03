@@ -24,7 +24,11 @@ class CurrSubj extends Eloquent {
 	public function list_preq($f = 'sub_code')
 	{
 		$preq = [];
+
+
+
 		foreach ($this->pre_requisites as $p) {
+			if(isset($p->subject))
 			$preq[] = $p->subject->$f;
 		}
 

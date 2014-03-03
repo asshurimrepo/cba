@@ -5,9 +5,11 @@
 	<h1 ><center>Welcome, {{ Auth::user()->fullname() }}</center></h1>
 
 	<br>
+			@if(Auth::user()->is_admin)
 
 	<div class="box-content">
-						
+			
+
 						<a class="quick-button span2" href="{{ url('users') }}">
 							<i class="fa-icon-group"></i>
 							<p>Users</p>
@@ -39,6 +41,8 @@
 						</a>
 						<div class="clearfix"></div>
 					</div>
+					
+			@endif
 
 	<center>
 	<br>

@@ -31,7 +31,7 @@
 							<div class="input-prepend" title="Username">
 								<span class="add-on"><i class="halflings-icon user"></i></span>
 
-								{{ Form::text('username',null,['id'=>'username', 'placeholder'=>'Username', 'class'=>'input-large span10']) }}
+								{{ Form::text('username',null,['id'=>'username', 'placeholder'=>'Username', 'class'=>'input-large span10', 'autocomplete'=>'off']) }}
 							</div>
 							<div class="clearfix"></div>
 

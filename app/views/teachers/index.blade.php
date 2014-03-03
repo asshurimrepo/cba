@@ -34,7 +34,7 @@
 
 								{{ Form::open(['route'=>['teachers.destroy', $t->id], 'method'=>'delete', 'style'=>'margin:0;']) }}	
 
-									<a class="btn btn-info" href="{{ route('teachers.edit', [$t->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Edit Student">
+									<a class="btn btn-info" href="{{ route('teachers.edit', [$t->id]) }}" data-rel="tooltip" data-placement="top" data-original-title="Edit Teacher">
 										<i class="halflings-icon edit"></i>  
 									</a>
 

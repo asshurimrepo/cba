@@ -51,14 +51,23 @@
 						  </thead> 
 
 						  <tbody>
-						  	
+						  
+						  <?php 
+						  	$grade_list = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 'INC', "DRP"];
+						  	$grades['0'] = '';
+						  	foreach ($grade_list as $g) {
+						  		$grades[''.$g] = $g;
+						  	}
+						  	 
+						  ?>
+
 						  	@foreach ($enrollments as $e)
 						  		
 						  	<tr>
 						  		<td>{{ $e->student->fullname() }}</td>
 						  		<td>{{ $e->student->gender }}</td>
 						  		<td>{{ $e->student->course->code }}</td>
-						  		<td class="span3">{{ Form::text('grade', $e->grade, ['style'=>'width:90%', 'placeholder'=>'Enter Grade Here','class'=>'grade_submit', 'data-e_id'=>$e->id]) }}</td>
+						  		<td class="span3">{{ Form::select('grade', $grades, $e->grade, ['style'=>'width:90%', 'placeholder'=>'Enter Grade Here','class'=>'grade_submit', 'data-e_id'=>$e->id]) }}</td>
 						  	</tr>
 
 						  @endforeach  

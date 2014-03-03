@@ -40,7 +40,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<!-- <li><a href="#"><i class="halflings-icon white user"></i> Profile</a></li> -->
-								<li><a href="<?php echo url('auth/logout'); ?>"><i class="halflings-icon white cog "></i>Account Settings</a></li>
+								<li><a href="<?php echo url('account-settings'); ?>"><i class="halflings-icon white cog "></i>Account Settings</a></li>
 								<li><a href="<?php echo url('auth/logout'); ?>"><i class="halflings-icon white off"></i> Logout</a></li>
 							</ul>
 						</li>

@@ -3,11 +3,10 @@
 <?php $__env->startSection('c'); ?>
 
 	<div class="row-fluid sortable">	
-				<div class="box span12">
+				<div class="box span7">
 					<div class="box-header" data-original-title="">
 						<h2><i class="fa-icon-list-alt"></i><span class="break"></span><?php echo link_to_route('courses.index', $course->name); ?> > Curriculums </h2>
 						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon plus"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
 						</div>
 					</div>
@@ -15,7 +14,6 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>ID</th>
 								  <th>SY</th>
 								  <th>Description</th>
 								  <th>Actions</th>
@@ -24,7 +22,6 @@
 						  <tbody>
 						  	<?php foreach($curriculums as $c): ?>
 						  	<tr>
-								<td class="center"><?php echo $c->id; ?> </td>
 								<td class="center"><?php echo $c->sy; ?> </td>
 								<td class="center"><?php echo $c->description; ?> </td>
 								
@@ -57,6 +54,9 @@
 					  </table>            
 					</div>
 				</div><!--/span-->
+
+				<?php echo $__env->make('curriculums.create', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 			
 			</div>
 
@@ -64,7 +64,6 @@
 
 <?php $__env->startSection('modals'); ?>
 
-	<?php echo $__env->make('curriculums.create', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('acme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

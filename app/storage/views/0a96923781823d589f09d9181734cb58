@@ -4,9 +4,11 @@
 	<h1 ><center>Welcome, <?php echo Auth::user()->fullname(); ?></center></h1>
 
 	<br>
+			<?php if(Auth::user()->is_admin): ?>
 
 	<div class="box-content">
-						
+			
+
 						<a class="quick-button span2" href="<?php echo url('users'); ?>">
 							<i class="fa-icon-group"></i>
 							<p>Users</p>
@@ -38,6 +40,8 @@
 						</a>
 						<div class="clearfix"></div>
 					</div>
+					
+			<?php endif; ?>
 
 	<center>
 	<br>

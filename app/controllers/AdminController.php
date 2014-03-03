@@ -54,4 +54,15 @@ class AdminController extends BaseController {
         return View::make('main.evaluate', compact('students'));
 	}
 
+	public function getAboutUs()
+	{
+		Session::put('active', 'about-us');
+		return View::make('main.about_us');
+	}
+
+	public function getAccountSettings()
+	{
+		return View::make('account_settings');
+	}
+
 }

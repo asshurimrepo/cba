@@ -1,3 +1,5 @@
+<?php $is_hide = ''; ?>
+
 <?php echo $t_title; ?>
 
 	<table class="table table-striped table-bordered">
@@ -25,19 +27,25 @@
 				<?php if(isset($student)): ?>
 					<?php $e = Enrollment::where('curriculum_subject_id', $s->id)->where('student_id',$student->id)->first(); ?>
 				<?php endif; ?>
-				
-				<tr>
+
+				<?php if($eval): ?>
+					<?php $is_hide = $e && $e->grade ? '' : 'hide'; ?>
+				<?php endif; ?>
+
+				<tr class="<?php echo $is_hide; ?>">
 					
 					<td><?php echo $s->subject->sub_code; ?></td>
 					<td><?php echo $s->subject->description; ?></td>
 					<td><?php echo $s->subject->units; ?></td>
 					
 					<?php if(isset($student)): ?>
-						<td><?php echo $e ? $e->grade : ''; ?></td>
+						
+							<td><?php echo $e ? $e->grade : ''; ?></td>
+						
 					<?php endif; ?>
 
 					<?php if(!$eval): ?>
-					<td><?php echo implode(', ', $s->list_preq()); ?></td>
+						<td><?php echo implode(', ', $s->list_preq()); ?></td>
 					<?php endif; ?>
 
 				</tr>

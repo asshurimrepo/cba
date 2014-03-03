@@ -1,6 +1,4 @@
 
-
-
 <div class="box span5">
 	<div class="box-header" data-original-title="">
 		<h2><i class="fa-icon-plus"></i><span class="break"></span> Add New Student </h2>
@@ -16,7 +14,6 @@
 	
 	<fieldset>
 
-	<?php echo Form::hidden('is_admin', 2); ?>
 
 			 
 
@@ -58,7 +55,7 @@
 			  <div class="control-group">
 				<?php echo Form::label('gender', 'Gender', ['class'=>'control-label']); ?>
 				<div class="controls">
-				  <?php echo Form::select('gender', [1=>'Male', 2=>'Female'], null, ['required'=>true, 'class'=>'']); ?>
+				  <?php echo Form::select('gender', ['Male'=>'Male', 'Female'=>'Female'], null, ['required'=>true, 'class'=>'']); ?>
 				</div>
 			  </div>
 

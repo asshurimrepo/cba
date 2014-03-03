@@ -34,8 +34,7 @@
 
 	<?php echo $__env->make('print.table', ['t_title'=>'FOURTH YEAR, FIRST SEMESTER', 'lvl'=>4, 'sem'=>'First'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<?php echo $__env->make('print.table', ['t_title'=>'FOURTH YEAR, SECOND SEMESTER', 'lvl'=>4, 'sem'=>'Second'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
-
+	
 
 </div>
 <?php $__env->stopSection(); ?>
